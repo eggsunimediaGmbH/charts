@@ -143,10 +143,11 @@ readinessProbe:
 #define rules
 rules:
   # read from Configmap name
-  fromConfigMap: ""
+  fromConfigMap: "test"
   values:
     # the key of the configMap to be maped
-    - subPath: ""
+    - subPath: "testsss"
+    - subPath: "testsss12"
 
 service:
   type: ClusterIP

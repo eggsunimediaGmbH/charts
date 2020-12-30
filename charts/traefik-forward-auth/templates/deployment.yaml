@@ -53,8 +53,10 @@ spec:
           {{- end }}
           env:
             {{- if .Values.rules.fromConfigMap }}
+            {{- range .Values.rules.values }}
             - name: CONFIG
-              value: "/config"
+              value: "/config/{{ .subPath }}"
+            {{- end }}
             {{- end }}
             {{- if .Values.logging.level }}
             - name: LOG_LEVEL
