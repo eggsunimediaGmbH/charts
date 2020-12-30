@@ -144,6 +144,9 @@ readinessProbe:
 rules:
   # read from Configmap name
   fromConfigMap: ""
+  values:
+    # the key of the configMap to be maped
+    - subPath: ""
 
 service:
   type: ClusterIP

@@ -40,9 +40,12 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           {{- if .Values.rules.fromConfigMap }}
           volumeMounts:
+            {{- range .Values.rules.values }}
             - name: config
               mountPath: "/config"
               readOnly: true
+              subPath: {{ .subPath | quote  }}
+            {{- end }}
           {{- end }}
           {{- with .Values.envFrom }}
           envFrom:
