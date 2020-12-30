@@ -140,6 +140,11 @@ readinessProbe:
     port: http
   periodSeconds: 10
 
+#define rules
+rules:
+  # read from Configmap name
+  fromConfigMap:
+
 service:
   type: ClusterIP
   port: 4181
