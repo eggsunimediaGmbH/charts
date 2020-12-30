@@ -143,7 +143,7 @@ readinessProbe:
 #define rules
 rules:
   # read from Configmap name
-  fromConfigMap:
+  fromConfigMap: ""
 
 service:
   type: ClusterIP
