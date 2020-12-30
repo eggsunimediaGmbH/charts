@@ -228,7 +228,8 @@ spec:
       {{- end }}
       {{- with .Values.tolerations }}
       tolerations:
-      {{- toYaml . | nindent 8 }}
+    {{- toYaml . | nindent 8 }}
+  {{- end }}
       {{- if .Values.rules.fromConfigMap }}
       volumes:
         # You set volumes at the Pod level, then mount them into containers inside that Pod
@@ -237,4 +238,3 @@ spec:
             # Provide the name of the ConfigMap you want to mount.
             name: {{ .Values.rules.fromConfigMap | quote }}
       {{- end }}
-  {{- end }}
